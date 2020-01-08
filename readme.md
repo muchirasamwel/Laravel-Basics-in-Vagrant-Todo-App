@@ -17,7 +17,7 @@ then do the migration to vagrant
 php artisan migrate
 ```
 Then launch the app depending on the domain you give it on the homestead or vagrant config file.
-##### select on Todo App link and then create your tasks and view added tasks as you add and delete.
+##### select on Todo App link and then create your tasks and view added tasks as you add, update (set tasks as completd) and delete.
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
