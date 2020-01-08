@@ -49,4 +49,14 @@ class todoController extends Controller
         $object = todo::all();
         return view('todo')->with(['data'=>$object]);
     }
+    public function upTodo(Request $request)
+    {
+        //var_dump($request->input('taskstatus'));
+        todo::whereIn('id',[$request->input('id')])->update(['taskstatus'=>"Completed"]);
+//        $task=todo::find($request->input('id'));
+//        $task->taskstatus=$request->input('taskstatus');
+//        $task->upd
+        $object = todo::all();
+        return view('todo')->with(['data'=>$object]);
+    }
 }

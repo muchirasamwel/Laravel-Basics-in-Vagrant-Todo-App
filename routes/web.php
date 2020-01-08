@@ -18,3 +18,4 @@ Route::get('/',"todoController@goHome");
 Route::get('/todo',"todoController@goTodo");
 Route::post('/todo',"todoController@postTodo");
 Route::post('/del',"todoController@delTodo");
+Route::post('/upd',"todoController@upTodo");

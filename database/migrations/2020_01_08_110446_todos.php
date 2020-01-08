@@ -17,6 +17,7 @@ class Todos extends Migration
             $table->bigIncrements('id');
             $table->string('taskname')->unique();
             $table->string('taskdate');
+            $table->string('taskstatus')->default('Pending');
             $table->timestamps();
         });
     }

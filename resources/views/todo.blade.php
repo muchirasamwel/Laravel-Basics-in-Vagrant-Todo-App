@@ -41,6 +41,12 @@
             display: inline;
             font-weight: bolder;
             color: red;
+            display: inline-block;
+        }
+        .upd{
+            background-color: blue;
+            color: white;
+
         }
     </style>
 @endsection
@@ -56,12 +62,19 @@
             <div id="tasklist">
                 <ol>
                     @foreach($data as $task)
-                        <li>{{$task->taskname}} on {{$task->taskdate}}
+                        <li>{{$task->taskname}} on {{$task->taskdate}} status {{$task->taskstatus}}
                             <form action="/del" method="post">
                                 @csrf
                                 <input type="hidden" name="id" value="{{$task->id}}">
                                 <button type="submit" class="del">Delete</button>
                             </form>
+                            @if($task->taskstatus=="Pending")
+                            <form action="/upd" method="post">
+                                @csrf
+                                <input type="hidden" name="id" value="{{$task->id}}">
+                                <button type="submit" class="upd">Set Completed</button>
+                            </form>
+                            @endif
                         </li>
                     @endforeach
                     {{--                    <li>Design an interface</li>--}}
